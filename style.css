@@ -143,3 +143,53 @@ i {
   z-index: 1;
   transition: all 250ms linear;
 }
+/* !--------------------- */
+/* *Test color with : https://realtimecolors.com/ */
+#test_color,
+#test_color2 {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.test-color,
+.test-color2 {
+  width: 50%;
+  height: 100%;
+  background: #e6e6e6;
+  /* background: hsl(0, 0%, 90%); */
+}
+.test-color *,
+.test-color2 * {
+  border: 0;
+  border-radius: 5px;
+  height: 50%;
+  width: 20%;
+  color: hsl(0, 0%, 90%);
+}
+.test-color button {
+  background: #0000cc;
+  /* background: hsl(240, 100%, 40%); */
+}
+.test-color input {
+  background: #0088cc;
+  /* background: hsl(200, 100%, 40%); */
+}
+.test-color .accent {
+  background: #cccc00;
+  /* background: hsl(60, 100%, 40%); */
+}
+
+.test-color2 button {
+  background: #00cc00;
+  /* background: hsl(160, 100%, 40%); */
+}
+.test-color2 input {
+  background: #00cc88;
+  /* background: hsl(200, 100%, 40%); */
+}
+.test-color2 .accent2 {
+  background: #cc00cc;
+  /* background: hsl(300, 100%, 40%); */
+}
