@@ -1,0 +1,85 @@
+/* !--------------------------------- */
+/* *Card Immo */
+.house-info {
+  --h: 80px; /* the intresection height*/
+  --g: 16px; /* the gap */
+  --r: 18px; /* the radius */
+
+  display: grid;
+  gap: var(--g);
+  grid-auto-rows: 200px;
+  max-width: 25rem;
+  margin: 2rem auto;
+  container-type: inline-size;
+}
+.house-info > img {
+  width: 100%;
+  height: calc(100% + var(--h) / 2);
+  object-fit: cover;
+  border-radius: var(--r);
+  --_g: /var(--r) var(--r) radial-gradient(
+      100% 100% at 100% 0,
+      #0000 98%,
+      #000 101%
+    ) no-repeat;
+  -webkit-mask: calc(50% + var(--g) / 2 + var(--r) / 2) 100% var(--_g),
+    0 calc(100% - var(--h)) var(--_g),
+    radial-gradient(100% 100% at 0 100%, #0000 98%, #000 101%) no-repeat
+      calc(50% - var(--r) / 2) calc(100% - var(--h) + var(--g) + var(--r)) /
+      calc(var(--g) + var(--r)) calc(var(--g) + var(--r)),
+    conic-gradient(
+      from 180deg at calc(50% + var(--g) / 2) calc(100% - var(--h)),
+      #0000 25%,
+      #000 0
+    );
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.house-info > div {
+  margin-top: calc(var(--h) / -2);
+  border-radius: var(--r);
+  --_g: /var(--r) var(--r) radial-gradient(
+      100% 100% at 0 100%,
+      #0000 98%,
+      #000 101%
+    ) no-repeat;
+  -webkit-mask: calc(50% - var(--g) / 2 - var(--r) / 2) 0 var(--_g),
+    100% var(--h) var(--_g),
+    radial-gradient(100% 100% at 100% 0, #0000 98%, #000 101%) no-repeat
+      calc(50% + var(--r) / 2) calc(var(--h) - var(--g) - var(--r)) /
+      calc(var(--g) + var(--r)) calc(var(--g) + var(--r)),
+    conic-gradient(at calc(50% - var(--g) / 2) var(--h), #0000 25%, #000 0);
+  -webkit-mask-composite: xor, xor, source-over; /* xor alone should be fine but I get a strange line */
+  mask-composite: exclude;
+  background: linear-gradient(135deg, #000, #333);
+  color: #fff;
+  padding: 1rem;
+  font-family: system-ui;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.house-info > div span {
+  display: block;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  width: calc(50% - 1rem - var(--g) / 2);
+  padding-inline: 0.5rem;
+  border-radius: calc(var(--r) - 0.5rem);
+  box-sizing: border-box;
+}
+
+@container (width < 20rem) {
+  .house-info > div,
+  .house-info > img {
+    margin: 0;
+    height: 100%;
+    -webkit-mask: none;
+  }
+  .house-info > div span {
+    width: 100%;
+  }
+}
+/* !--------------------------- */
+/* *Pagniation */
